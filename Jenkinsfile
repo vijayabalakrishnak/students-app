@@ -37,20 +37,6 @@ pipeline {
             }
         }
 
-        stage('SonarQube Analysis') {
-    steps {
-        withSonarQubeEnv('sonarqube') {
-            sh '''
-            mvn sonar:sonar \
-            -Dsonar.host.url=http://localhost:9000 \
-            -Dsonar.projectKey=student-app-jar \
-            -Dsonar.projectName=student-app
-            '''
-        }
-    }
-}
-
-
         stage('Package JAR') {
             steps {
                 sh 'mvn package -DskipTests'
