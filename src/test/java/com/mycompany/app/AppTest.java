@@ -3,23 +3,26 @@ package com.mycompany.app;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
+import static org.junit.jupiter.api.Assertions.assertNotNull;
 
-/**
- * Unit test for simple App.
- */
-public class AppTest
-{
-    @Test
-    public void testAppConstructor() {
-        App app1 = new App();
-        App app2 = new App();
-        assertEquals(app1.getMessage(), app2.getMessage());
-    }
+public class AppTest {
 
     @Test
-    public void testAppMessage()
-    {
+    void testAppCreation() {
+
         App app = new App();
-        assertEquals("Hello World!", app.getMessage());
+
+        assertNotNull(app);
+
     }
+
+    @Test
+    void testMessage() {
+
+        App app = new App();
+
+        assertEquals("Hello World!", app.getMessage());
+
+    }
+
 }
